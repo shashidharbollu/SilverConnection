@@ -14,14 +14,17 @@ Welcome to SilverConnection, an app designed to foster well-being, connection, a
 ## Screenshots
 
 <!-- Include relevant screenshots to showcase different pages of your app -->
-![Sign In](./screenshots/signin.png)
-![Home](./screenshots/home.png)
-![Jokes](./screenshots/jokes.png)
-![Health](./screenshots/health.png)
-![News](./screenshots/news.png)
-![Inspiration](./screenshots/inspiration.png)
-![Twitter](./screenshots/twitter.png)
-![About](./screenshots/about.png)
+![Sign In](./Screenshot%20(220).png)
+![Sign in success](./Screenshot%20(222).png)
+![Sign Up](./Screenshot%20(221).png)
+![Home](./Screenshot%20(219).png)
+![Jokes](./Screenshot%20(223).png)
+![Health](./Screenshot%20(224).png)
+![News](./Screenshot%20(225).png)
+![Inspiration](./Screenshot%20(226).png)
+![Twitter](./Screenshot%20(227).png)
+![About](./Screenshot%20(227).png)
+
 
 ## Features
 
