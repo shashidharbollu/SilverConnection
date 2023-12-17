@@ -8,10 +8,14 @@ export const Toolbar = () => {
   return (
     <div className={styles.main}>
       <div onClick={() => router.push('/')}>Home</div>
-      <div onClick={() => router.push('/feed/1')}>Feed</div>
-      <div onClick={() => router.push('/eom')}>EOM</div>
-      <div onClick={() => router.push('/Favorites')}>Favorites</div> {/* New Favorites route */}
-      <div onClick={() => (window.location.href = 'https://twitter.com/Theshashidhar1')}>Twitter</div>
+      <div onClick={() => router.push('/alarm')}>Jokes</div>
+      <div onClick={() => router.push('/health')}>Health</div>
+      <div onClick={() => router.push('/feed/1')}>News</div>
+      <div onClick={() => (window.location.href = 'https://twitter.com/')}>Twitter</div>
+      <div onClick={() => router.push('/eom')}>Inspiration</div>
+      <div onClick={() => router.push('/about')}>About</div>
+      
     </div>
+    
   );
 };

@@ -1,0 +1,27 @@
+/* AuthForm.module.css */
+.inputStyles {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+    width: 30%;
+  }
+  
+  .buttonStyles {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .linkStyles {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .errorStyles {
+    color: red;
+    margin-top: 10px;
+  }
+  

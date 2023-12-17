@@ -1,0 +1,63 @@
+/* styles/Jokes.module.css */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 2rem; /* Decreased font size */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem; /* Decreased margin */
+    color: bisque;
+  }
+  
+  .content {
+    width: 80%; /* Decreased width */
+    max-width: 400px; /* Decreased max-width */
+    background-color: #333;
+    border-radius: 8px;
+    padding: 2rem; /* Decreased padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); /* Decreased box shadow */
+  }
+  
+  .joke {
+    font-size: 1.2rem; /* Decreased font size */
+    font-weight: 300;
+    line-height: 2rem; /* Decreased line height */
+    text-align: justify;
+    margin-bottom: 1rem; /* Decreased margin */
+    color: white;
+  }
+  
+  .button {
+    width: fit-content;
+    padding: 0.8rem 1.5rem; /* Decreased padding */
+    font-size: 1rem;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #131313;
+  }
+  
+  /* Add some spacing between the button and joke */
+  .content > * {
+    margin-bottom: 0.5rem; /* Decreased margin */
+  }
+  
+  /* Remaining styles for the floating card */
+  /* ... */
+  

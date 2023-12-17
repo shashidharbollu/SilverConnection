@@ -8,13 +8,15 @@ import { Toolbar } from '../components/toolbar';
 export default function Home() {
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
   const [showLogin, setShowLogin] = useState(true);
 
   const toggleForm = () => {
     setShowLogin(!showLogin);
-    setError(null); // Clear any previous error messages
+    setError(null);
   };
 
   useEffect(() => {
@@ -29,6 +31,7 @@ export default function Home() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // If successful, onAuthStateChanged will update the user state
+      alert('Login successful!');
     } catch (error) {
       setError(error.message);
     }
@@ -36,9 +39,15 @@ export default function Home() {
 
   const handleSignup = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // If successful, onAuthStateChanged will update the user state
-      setShowLogin(true); // Redirect to the login form after a successful signup
+      if (password !== confirmPassword) {
+        throw new Error("Passwords do not match");
+      }
+
+      await createUserWithEmailAndPassword(auth, email, password, {
+        displayName: name,
+      });
+      setShowLogin(true);
+      alert('Signup successful! Please login.');
     } catch (error) {
       setError(error.message);
     }
@@ -116,9 +125,21 @@ export default function Home() {
         style={inputStyles}
       />
       <input
+        type="text"
+        placeholder="Name"
+        onChange={(e) => setName(e.target.value)}
+        style={inputStyles}
+      />
+      <input
         type="password"
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
+        style={inputStyles}
+      />
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        onChange={(e) => setConfirmPassword(e.target.value)}
         style={inputStyles}
       />
       <button onClick={handleSignup} style={buttonStyles}>
@@ -134,16 +155,34 @@ export default function Home() {
     </>
   );
 
+  const renderMotivationalQuote = () => {
+    if (user) {
+      return (
+        <div className={styles.motivationContainer}>
+          <h2 style={{ fontSize: '18px', marginBottom: '20px' }}>
+            Embrace the wisdom that comes with age, for it is a beautiful journey.
+          </h2>
+          <p>This app is your perfect companion on the beautiful journey of life.</p>
+          <p>Cherish the moments and enjoy the stories.</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div className="page-container">
       <div className={styles.main}>
         {user ? (
           <>
-            <h1 style={{ fontSize: '24px' }}>Welcome, {user.email}!</h1>
-            <button onClick={handleLogout} style={buttonStyles}>
-              Logout
-            </button>
-            <Toolbar />
+            <div className={styles.userContainer}>
+              <h1 style={{ fontSize: '24px', marginRight: '20px' }}>Welcome, {user.displayName || user.email}! &nbsp; &nbsp; &nbsp; &nbsp; <button onClick={handleLogout} style={buttonStyles}>
+                Logout
+              </button></h1>
+            </div>
+            <span> <Toolbar /> </span>
+            {renderMotivationalQuote()}
           </>
         ) : showLogin ? (
           renderLoginForm()

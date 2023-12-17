@@ -1,13 +1,19 @@
+/* styles/Home.module.css */
+
 .main {
-  width: 100%;
+  width: 1000px;
   height: 50px;
   display: flex;
   justify-content: center;
+  background-color: blanchedalmond;
+  border-radius: 10px; 
 }
+
 .main div {
-  margin: 25px;
+  margin: 15px 50px; /* Adjust the second value to control the horizontal gap */
   cursor: pointer;
 }
+
 .main div:hover {
   color: rgb(168, 168, 168);
 }

@@ -33,13 +33,13 @@ export const EOM = () => {
         <Toolbar />
 
         <div className={styles.main}>
-          <h1>Employee Of The Month</h1>
+          <h1>Inspiration for Healthy Aging</h1>
 
           <div className={styles.employeeOfTheMonth}>
-            <h3>Shashidhar Bollu</h3>
-            <h6>Software Engineer</h6>
+            <h3> Discover the joy of aging gracefully and embracing the journey of life with a positive mindset.</h3>
+            <h6>Staying Active and Engaged</h6>
             <Image src={avatar} alt="employee"  />
-            <p>Software Developer and CEO</p>
+            <p>Embracing Life's Journey</p>
           </div>
         </div>
       </div>
